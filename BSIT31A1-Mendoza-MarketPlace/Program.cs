@@ -1,5 +1,6 @@
 using BSIT31A1_Mendoza_MarketPlace.Infrastructure;
 using BSIT31A1_Mendoza_MarketPlace.Data;
+using BSIT31A1_Mendoza_MarketPlace.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDbContext<MarketplaceDbContext>(options =>
     options.UseSqlite(connectionString));
+builder.Services.AddScoped<IItemService, ItemService>();
+builder.Services.AddScoped<IInterestService, InterestService>();
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

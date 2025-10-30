@@ -1,0 +1,37 @@
+@page
+@model BSIT31A1_Mendoza_MarketPlace.Pages_Interests.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Interest</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Interest.BuyerId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Interest.BuyerId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Interest.InterestedAt)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Interest.InterestedAt)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Interest.Item)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Interest.Item.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Interest.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
